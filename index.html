@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aloyse Design — Full Builds, Renovations &amp; Interiors | Chapel Hill, NC</title>
+<meta name="description" content="Aloyse Design is a women-owned design-build practice in Chapel Hill, North Carolina — full builds, renovations, and interiors, from foundation to finish. Est. 1950.">
+<meta property="og:title" content="Aloyse Design">
+<meta property="og:description" content="From foundation to finish. Full builds, renovations & interiors in Chapel Hill, NC. Women owned & operated since 1950.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="monogram.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  :root {
+    color-scheme: light dark;
+    --paper: #efe9dd;
+    --paper-deep: #e6decd;
+    --card: #f7f4ef;
+    --ink: #211c14;
+    --ink-soft: #5f5546;
+    --line: rgba(33, 28, 20, 0.18);
+    --line-faint: rgba(33, 28, 20, 0.10);
+    --bronze: #8a6d3f;
+    --bronze-deep: #6f5730;
+    --card-shadow: 0 1px 2px rgba(33,28,20,.10), 0 12px 40px rgba(33,28,20,.14);
+    --display: 'Marcellus', 'Times New Roman', Georgia, serif;
+    --body: 'Karla', 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1b1712;
+      --paper-deep: #15120e;
+      --ink: #ece5d6;
+      --ink-soft: #a89d89;
+      --line: rgba(236, 229, 214, 0.20);
+      --line-faint: rgba(236, 229, 214, 0.10);
+      --bronze: #c2a26a;
+      --bronze-deep: #d3b47e;
+      --card-shadow: 0 1px 2px rgba(0,0,0,.4), 0 14px 44px rgba(0,0,0,.5);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; }
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; }
+
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 28px; }
+
+  .eyebrow {
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bronze);
+  }
+
+  /* ---- top bar ---- */
+  header.bar { border-bottom: 1px solid var(--line-faint); }
+  .bar-inner {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 24px; padding: 22px 0;
+  }
+  .wordmark {
+    font-family: var(--display);
+    font-size: 20px;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .bar-meta {
+    font-size: 13px; letter-spacing: 0.08em; color: var(--ink-soft);
+    display: flex; gap: 22px; flex-wrap: wrap;
+  }
+  .bar-meta a { text-decoration: none; }
+  .bar-meta a:hover { color: var(--bronze); }
+
+  /* ---- hero ---- */
+  .hero { padding: 84px 0 96px; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: 64px;
+    align-items: center;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    margin: 18px 0 24px;
+    text-wrap: balance;
+  }
+  .hero h1 em { font-style: normal; color: var(--bronze); }
+  .hero p.lede {
+    max-width: 46ch;
+    color: var(--ink-soft);
+    margin: 0 0 36px;
+  }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .btn {
+    display: inline-block;
+    font-weight: 600; font-size: 13px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 26px;
+    background: var(--ink); color: var(--paper);
+    transition: background .18s ease;
+  }
+  .btn:hover { background: var(--bronze-deep); }
+  .btn.ghost {
+    background: transparent; color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .btn.ghost:hover { background: transparent; border-color: var(--bronze); color: var(--bronze-deep); }
+
+  /* the physical card, reproduced */
+  .card-object {
+    justify-self: end;
+    width: min(360px, 100%);
+    aspect-ratio: 360 / 220;
+    background: var(--card);
+    border-radius: 3px;
+    box-shadow: var(--card-shadow);
+    display: flex; align-items: center; justify-content: center;
+    transform: rotate(-2deg);
+  }
+  .card-object img { width: 34%; height: auto; display: block; }
+  .card-caption {
+    grid-column: 2; justify-self: end;
+    margin-top: 18px;
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* ---- section scaffolding ---- */
+  section { padding: 84px 0; border-top: 1px solid var(--line-faint); }
+  .sec-head { margin-bottom: 48px; }
+  .sec-head h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 38px);
+    line-height: 1.15;
+    margin: 14px 0 0;
+    text-wrap: balance;
+  }
+
+  /* ---- services ---- */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+  }
+  .service { border-top: 2px solid var(--ink); padding-top: 22px; }
+  .service h3 {
+    font-family: var(--display); font-weight: 400;
+    font-size: 23px; margin: 0 0 10px;
+  }
+  .service p { margin: 0; color: var(--ink-soft); font-size: 15.5px; }
+
+  /* ---- process ---- */
+  .process {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    border-left: 1px solid var(--line);
+  }
+  .step { border-right: 1px solid var(--line); padding: 6px 26px 6px 22px; }
+  .step .no {
+    font-family: var(--display);
+    font-size: 15px; color: var(--bronze);
+    letter-spacing: 0.1em;
+    display: block; margin-bottom: 12px;
+  }
+  .step h3 { font-family: var(--display); font-weight: 400; font-size: 19px; margin: 0 0 8px; }
+  .step p { margin: 0; color: var(--ink-soft); font-size: 14.5px; line-height: 1.55; }
+
+  /* ---- heritage ---- */
+  .heritage { background: var(--paper-deep); }
+  .heritage-grid {
+    display: grid; grid-template-columns: auto minmax(0, 1fr);
+    gap: 56px; align-items: center;
+  }
+  .heritage .year {
+    font-family: var(--display);
+    font-size: clamp(84px, 12vw, 148px);
+    line-height: 0.95;
+    color: var(--bronze);
+    font-variant-numeric: tabular-nums;
+  }
+  .heritage h2 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(26px, 3.2vw, 34px);
+    margin: 14px 0 14px; text-wrap: balance;
+  }
+  .heritage p { max-width: 58ch; color: var(--ink-soft); margin: 0; }
+
+  /* ---- principals ---- */
+  .people {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
+  .person { border-top: 2px solid var(--ink); padding-top: 22px; }
+  .person h3 { font-family: var(--display); font-weight: 400; font-size: 24px; margin: 0; }
+  .person .cred {
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--bronze); margin: 8px 0 14px;
+  }
+  .person p { margin: 0 0 16px; color: var(--ink-soft); font-size: 15.5px; }
+  .person a.tel {
+    font-variant-numeric: tabular-nums;
+    text-decoration: none; font-weight: 600; font-size: 15px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+  }
+  .person a.tel:hover { color: var(--bronze-deep); border-color: var(--bronze); }
+
+  /* ---- contact / footer ---- */
+  .contact { text-align: left; }
+  .contact-grid {
+    display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: 64px; align-items: start;
+  }
+  .contact h2 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(30px, 4vw, 44px);
+    margin: 14px 0 18px; text-wrap: balance;
+  }
+  .contact p { max-width: 46ch; color: var(--ink-soft); margin: 0 0 32px; }
+  dl.details { margin: 0; display: grid; gap: 20px; }
+  dl.details div { border-top: 1px solid var(--line-faint); padding-top: 14px; }
+  dl.details dt {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 4px;
+  }
+  dl.details dd { margin: 0; font-size: 17px; }
+  dl.details dd a { text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+  dl.details dd a:hover { color: var(--bronze-deep); border-color: var(--bronze); }
+
+  footer.colophon {
+    border-top: 1px solid var(--line-faint);
+    padding: 30px 0 44px;
+  }
+  .colophon-inner {
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 860px) {
+    .hero { padding: 56px 0 64px; }
+    .hero-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+    .card-object { justify-self: start; transform: rotate(-1.5deg); }
+    .card-caption { grid-column: 1; justify-self: start; }
+    .services, .people { grid-template-columns: 1fr; gap: 32px; }
+    .process { grid-template-columns: 1fr; border-left: 0; }
+    .step { border-right: 0; border-top: 1px solid var(--line); padding: 18px 4px; }
+    .heritage-grid { grid-template-columns: 1fr; gap: 20px; }
+    section { padding: 60px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-inner">
+    <div class="wordmark">Aloyse&nbsp;Design</div>
+    <nav class="bar-meta" aria-label="Contact shortcuts">
+      <span>Chapel Hill, North Carolina</span>
+      <a href="tel:+16463269993">646.326.9993</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Full Builds &middot; Renovations &middot; Interiors</span>
+        <h1>From foundation <em>to finish.</em></h1>
+        <p class="lede">Aloyse Design is a women-owned design&#8209;build practice in Chapel Hill, North Carolina — carrying a home from the first drawing through construction to the last detail of its interior, under one name.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="tel:+16463269993">Start a conversation</a>
+          <a class="btn ghost" href="#principals">Meet the principals</a>
+        </div>
+      </div>
+      <div class="card-object" role="img" aria-label="The Aloyse Design business card: an engraved crossing-lines A monogram on cream stock">
+        <img src="monogram.png" alt="">
+      </div>
+      <div class="card-caption">Est. 1950 &middot; Women owned &amp; operated</div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">What we do</span>
+        <h2>One practice, three disciplines</h2>
+      </div>
+      <div class="services">
+        <div class="service">
+          <h3>Full Builds</h3>
+          <p>Ground-up construction, managed end to end — site, permits, structure, and schedule held to a standard worth putting our name on.</p>
+        </div>
+        <div class="service">
+          <h3>Renovations</h3>
+          <p>Additions and whole-home remodels that respect what a house already is while making it work for the way you live now.</p>
+        </div>
+        <div class="service">
+          <h3>Interiors</h3>
+          <p>Board-certified interior design — space planning, materials, and finishes resolved with the same rigor as the framing behind them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">How a project runs</span>
+        <h2>Foundation to finish, in order</h2>
+      </div>
+      <div class="process">
+        <div class="step">
+          <span class="no">I</span>
+          <h3>Consult</h3>
+          <p>We walk the site or the house, listen to how you live, and give you a straight read on scope, budget, and timeline.</p>
+        </div>
+        <div class="step">
+          <span class="no">II</span>
+          <h3>Design</h3>
+          <p>Plans, materials, and interiors are resolved together — so the drawings you approve are the house you get.</p>
+        </div>
+        <div class="step">
+          <span class="no">III</span>
+          <h3>Build</h3>
+          <p>Certified project management keeps trades, schedule, and budget accountable, with one point of contact throughout.</p>
+        </div>
+        <div class="step">
+          <span class="no">IV</span>
+          <h3>Finish</h3>
+          <p>The punch list, the finishes, the final walkthrough — done when it's right, not when it's close.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="heritage">
+    <div class="wrap heritage-grid">
+      <div class="year">1950</div>
+      <div>
+        <span class="eyebrow">Heritage</span>
+        <h2>Women owned &amp; operated for seventy&#8209;five years</h2>
+        <p>Since 1950, the Aloyse name has stood on this work. Three quarters of a century of building means the judgment to tell you what a project really takes — and the record to back it up.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="principals">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Principals</span>
+        <h2>The two names on every project</h2>
+      </div>
+      <div class="people">
+        <div class="person">
+          <h3>Aloyse Brown</h3>
+          <div class="cred">PMP &middot; Project Management Professional</div>
+          <p>Runs the build. PMP certification is the project-management standard for scope, schedule, and cost — which is what it takes to deliver construction on time and on budget.</p>
+          <a class="tel" href="tel:+16463269993">646.326.9993</a>
+        </div>
+        <div class="person">
+          <h3>Barbara Aloyse Heiss</h3>
+          <div class="cred">NCIDQ No. 15713 &middot; Certified Interior Designer</div>
+          <p>Leads the interiors. NCIDQ is the board certification for interior design — covering building codes and life safety, not just aesthetics.</p>
+          <a class="tel" href="tel:+13033457706">303.345.7706</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow">Begin</span>
+        <h2>Tell us about the house you have in mind.</h2>
+        <p>A first conversation costs nothing and commits you to nothing. Call either principal directly — you will always reach a person whose name is on the door.</p>
+        <a class="btn" href="tel:+16463269993">Call 646.326.9993</a>
+      </div>
+      <dl class="details">
+        <div>
+          <dt>Studio</dt>
+          <dd>Chapel Hill, North Carolina</dd>
+        </div>
+        <div>
+          <dt>Aloyse Brown, PMP</dt>
+          <dd><a href="tel:+16463269993">646.326.9993</a></dd>
+        </div>
+        <div>
+          <dt>Barbara Aloyse Heiss, NCIDQ</dt>
+          <dd><a href="tel:+13033457706">303.345.7706</a></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="colophon">
+  <div class="wrap colophon-inner">
+    <span>Aloyse Design &middot; Chapel Hill, NC</span>
+    <span>Women owned &amp; operated since 1950</span>
+  </div>
+</footer>
+
+</body>
+</html>
