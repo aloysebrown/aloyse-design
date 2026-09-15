@@ -44,6 +44,7 @@
   * { box-sizing: border-box; }
   body {
     margin: 0;
+    overflow-x: hidden;
     background: var(--paper);
     color: var(--ink);
     font-family: var(--body);
@@ -71,7 +72,7 @@
   header.bar { border-bottom: 1px solid var(--line-faint); }
   .bar-inner {
     display: flex; align-items: baseline; justify-content: space-between;
-    gap: 24px; padding: 22px 0;
+    gap: 10px 24px; padding: 22px 0; flex-wrap: wrap;
   }
   .wordmark {
     font-family: var(--display);
@@ -263,7 +264,12 @@
   }
 
   @media (max-width: 860px) {
+    .wrap { padding: 0 24px; }
+    .wordmark { font-size: 17px; letter-spacing: 0.22em; }
+    .bar-meta { gap: 6px 16px; font-size: 12.5px; }
     .hero { padding: 56px 0 64px; }
+    .hero h1 { font-size: clamp(34px, 9vw, 44px); }
+    .card-object { width: min(320px, 100%); }
     .hero-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
     .card-object { justify-self: start; transform: rotate(-1.5deg); }
     .card-caption { grid-column: 1; justify-self: start; }
